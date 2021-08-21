@@ -47,6 +47,11 @@ class MPVPlayer(Player):
     def get_status(self):
         if self.player.time_pos is None:
             return {"playing": False}
-        return {"playing": True, "paused": self.player.pause, "duration": self.player.duration, "position": self.player.time_pos, "name": self.player.media_title, "url": self.player.filename}
-
-    
+        return {
+            "playing": True, 
+            "paused": self.player.pause, 
+            "duration": self.player.duration, 
+            "position": self.player.time_pos, 
+            "name": self.player.media_title, 
+            "url": self.player.filename
+        }
