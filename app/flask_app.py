@@ -9,7 +9,7 @@ mp = MPVPlayer()
 
 @app.route('/')
 def root():
-    return 'MPVd working'
+    return 'PlayerD working'
 
 @app.route('/status')
 def status():
