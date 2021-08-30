@@ -17,10 +17,13 @@ class Player:
     def close(self):
         pass
 
+    def set_volume(self, volume: int):
+        pass
+
     def go_at(self, seconds: int):
         pass
     
-    def get_status(self): # {"paused": false, "duration": "60", "position": "30", "name": "song", "url": "url"}
+    def get_status(self): # {"paused": false, "duration": "60", "position": "30", "volume": 30, "name": "song", "url": "url"}
         pass
 
 
@@ -41,6 +44,9 @@ class MPVPlayer(Player):
     def close(self):
         self.player.stop()
 
+    def set_volume(self, volume: int):
+        self.player.volume = volume
+
     def go_at(self, seconds: int):
         self.player.time_pos = seconds
 
@@ -52,6 +58,7 @@ class MPVPlayer(Player):
             "paused": self.player.pause, 
             "duration": self.player.duration, 
             "position": self.player.time_pos, 
+            "volume": self.player.volume,
             "name": self.player.media_title, 
             "url": self.player.filename
         }

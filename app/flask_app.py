@@ -31,6 +31,10 @@ def action():
         if arg == None:
             return {'status': 400}
         mp.go_at(arg)
+    elif action == "volume":
+        if arg == None:
+            return {'status': 400}
+        mp.set_volume(arg)
     elif action == "play":
         if arg == None:
             return {'status': 400}
