@@ -48,7 +48,7 @@ def action():
             return {'status': 400}
         mp.playlist_remove(arg)
     elif action == "playlist_clear":
-        mp.playlist_clear(arg)
+        mp.playlist_clear()
     elif action == "playlist_go":
         if arg == None:
             return {'status': 400}
