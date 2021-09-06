@@ -26,6 +26,18 @@ class Player:
     def get_status(self): # {"paused": false, "duration": "60", "position": "30", "volume": 30, "name": "song", "url": "url"}
         pass
 
+    def playlist_append(self, url: str):
+        pass
+
+    def playlist_remove(self, index: int):
+        pass
+
+    def playlist_clear(self):
+        pass
+
+    def playlist_go(self, index: int):
+        pass
+
 
 class MPVPlayer(Player):
 
@@ -62,3 +74,15 @@ class MPVPlayer(Player):
             "name": self.player.media_title, 
             "url": self.player.filename
         }
+
+    def playlist_append(self, url: str):
+        self.player.playlist_append(url)
+
+    def playlist_remove(self, index: int):
+        self.player.playlist_remove(index)
+
+    def playlist_clear(self):
+        self.player.playlist_clear()
+
+    def playlist_go(self, index: int):
+        self.player.playlist_pos = index
