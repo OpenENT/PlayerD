@@ -39,5 +39,19 @@ def action():
         if arg == None:
             return {'status': 400}
         mp.play(arg)
-    
+    elif action == "playlist_append":
+        if arg == None:
+            return {'status': 400}
+        mp.playlist_append(arg)
+    elif action == "playlist_remove":
+        if arg == None:
+            return {'status': 400}
+        mp.playlist_remove(arg)
+    elif action == "playlist_clear":
+        mp.playlist_clear(arg)
+    elif action == "playlist_go":
+        if arg == None:
+            return {'status': 400}
+        mp.playlist_go(arg)
+
     return {'status': 200}
