@@ -82,6 +82,7 @@ class MPVPlayer(Player):
         self.player.playlist_remove(index)
 
     def playlist_clear(self):
+        self.player.stop()
         self.player.playlist_clear()
 
     def playlist_go(self, index: int):
